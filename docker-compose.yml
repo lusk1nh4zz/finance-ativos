@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: meu_postgres_container
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: meu_crud_profissional
+      POSTGRES_USER: usuario_desenvolvimento
+      POSTGRES_PASSWORD: senha_secreta_123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
